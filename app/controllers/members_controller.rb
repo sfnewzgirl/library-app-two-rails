@@ -10,6 +10,7 @@ class MembersController < ApplicationController
 
   def create
     @member = Member.create(member_params)
+    login(@member)
     redirect_to @member
   end
 
