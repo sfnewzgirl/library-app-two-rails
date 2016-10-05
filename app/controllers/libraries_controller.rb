@@ -7,10 +7,8 @@ class LibrariesController < ApplicationController
     @library = Library.new
   end
   def create
-    library = Library.new(library_params)
-    if library.save
+    @library = Library.create(library_params)
       redirect_to libraries_path
-    end
   end
   def show
     @library = Library.find_by_id(params[:id])
