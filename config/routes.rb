@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get '/members/:id', to: 'members#show', as: 'member'
 
+  get '/members/:member_id/libraries', to: 'library_members#index', as: 'member_libraries'
+
   get '/login', to: 'sessions#new'
   get '/logout', to: 'sessions#destroy'
   post '/sessions', to: 'sessions#create'
@@ -16,5 +18,7 @@ Rails.application.routes.draw do
 
   get 'libraries/new', to: 'libraries#new', as: 'new_library'
   post 'libraries', to: 'libraries#create'
+
+  get 'libraries/:id', to: 'libraries#show', as: 'library'
 
 end
