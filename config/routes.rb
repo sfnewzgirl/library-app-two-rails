@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get '/members/new', to: 'members#new', as: 'new_member'
   post '/members', to: 'members#create'
 
+  get '/members/:id', to: 'members#show', as: 'member'
+
 end
