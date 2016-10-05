@@ -3,6 +3,9 @@
 <% @libraries.each do |library| %>
   <div>
     <%= library.name %>
+    <% if current_member %>
+      <%= button_to "Join", library_members_path(library) %>
+    <% end %>
   </div>
   <br>
 <% end %>

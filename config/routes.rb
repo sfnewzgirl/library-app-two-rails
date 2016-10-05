@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/members/:id', to: 'members#show', as: 'member'
 
   get '/members/:member_id/libraries', to: 'library_members#index', as: 'member_libraries'
+  post '/libraries/:library_id/members', to: 'library_members#create', as: 'library_members'
 
   get '/login', to: 'sessions#new'
   get '/logout', to: 'sessions#destroy'
@@ -22,3 +23,5 @@ Rails.application.routes.draw do
   get 'libraries/:id', to: 'libraries#show', as: 'library'
 
 end
+
+# No route matches [POST] "/members/2/libraries"
