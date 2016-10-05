@@ -6,4 +6,15 @@ class LibrariesController < ApplicationController
   def new
     @library = Library.new
   end
+  def create
+    library = Library.new(library_params)
+    if library.save
+      redirect_to libraries_path
+    end
+  end
+
+  private
+  def library_params
+    params.require(:library).permit(:name, :floor_count, :floor_area)
+  end
 end
