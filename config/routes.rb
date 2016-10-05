@@ -8,4 +8,6 @@ Rails.application.routes.draw do
 
   get '/members/:id', to: 'members#show', as: 'member'
 
+  get '/login', to: 'sessions#new'
+
 end
