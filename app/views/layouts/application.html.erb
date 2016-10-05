@@ -11,9 +11,11 @@
   <body>
     <ul>
       <% if current_member %>
+        <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Profile", member_path(current_member) %></li>
         <li><%= link_to "Log Out", logout_path %></li>
       <% else %>
+        <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Create Account", new_member_path %></li>
         <li><%= link_to "Log In", login_path %></li>
       <% end %>
