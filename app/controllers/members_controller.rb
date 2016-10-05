@@ -9,9 +9,14 @@ class MembersController < ApplicationController
   end
 
   def create
-    @member = Member.create(member_params)
-    login(@member)
-    redirect_to @member
+    member = Member.new(member_params)
+    if member.save
+      login(member)
+      redirect_to member_path
+    else
+      flash[:error] = "Incorrect email or password."
+      redirect_to new_member_path
+    end
   end
 
   def show
