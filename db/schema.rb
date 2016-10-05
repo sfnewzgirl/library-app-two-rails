@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161005035002) do
+ActiveRecord::Schema.define(version: 20161005165936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "libraries", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "floor_count"
+    t.integer  "floor_area"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "library_members", force: :cascade do |t|
+    t.integer  "member_id"
+    t.integer  "library_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["library_id"], name: "index_library_members_on_library_id", using: :btree
+    t.index ["member_id"], name: "index_library_members_on_member_id", using: :btree
+  end
 
   create_table "members", force: :cascade do |t|
     t.string   "first_name"
@@ -24,4 +41,6 @@ ActiveRecord::Schema.define(version: 20161005035002) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "library_members", "libraries"
+  add_foreign_key "library_members", "members"
 end

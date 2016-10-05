@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     @member = Member.confirm(member_params)
     if @member
       login(@member)
-      flash[:notice] = "You're logged in!"
+      flash[:success] = "You're logged in!"
       redirect_to @member
     else
       flash[:error] = "Please try again."
@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
 
   def destroy
     logout
-    flash[:notice] = "You're logged out!"
+    flash[:success] = "You're logged out!"
     redirect_to root_path
   end
 
