@@ -4,5 +4,5 @@ module MembersHelper
     session[:member_id] = member.id
     @current_member = member
   end
-  
+
 end

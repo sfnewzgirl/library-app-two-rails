@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/members/:member_id/libraries', to: 'library_members#index', as: 'member_libraries'
   post '/libraries/:library_id/members', to: 'library_members#create', as: 'library_members'
 
-  get '/login', to: 'sessions#new'
+  get '/login', to: 'sessions#new', as: 'login'
   get '/logout', to: 'sessions#destroy'
   post '/sessions', to: 'sessions#create'
 

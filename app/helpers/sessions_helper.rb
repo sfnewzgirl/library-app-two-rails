@@ -1,5 +1,11 @@
 module SessionsHelper
 
+  def logged_in?
+    if current_member == nil
+    redirect_to login_path
+    end
+  end
+
   def login(member)
     session[:member_id] = member.id
     @current_member = member
