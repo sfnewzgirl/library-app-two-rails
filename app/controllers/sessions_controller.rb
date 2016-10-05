@@ -14,6 +14,11 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    logout
+    redirect_to root_path
+  end
+
   private
   def member_params
     params.require(:member).permit(:first_name, :last_name, :email, :password)
