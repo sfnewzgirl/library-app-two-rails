@@ -3,7 +3,7 @@ module SessionsHelper
   def logged_in?
     if current_member == nil
     redirect_to login_path
-    end
+  end
   end
 
   def login(member)

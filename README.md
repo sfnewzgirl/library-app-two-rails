@@ -1,5 +1,9 @@
 # README
 
+**Reflection**
+
+Rails does a lot for us! It's unnerving because I like to see what's happening but it sure does make it simpler to do this that are so frequent, like authorization and authentication. This training was fun and helped me deeper my knowledge about what Rails has to offer and how I can use it.
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

@@ -12,7 +12,8 @@ class MembersController < ApplicationController
   def create
     member = Member.new(member_params)
     if member.save
-      login(member)
+      session[:member_id] = member.id
+      # login(member)
       redirect_to member_path
     else
       flash[:error] = "Incorrect email or password."
@@ -21,7 +22,7 @@ class MembersController < ApplicationController
   end
 
   def show
-    @member = Member.find_by_id(params[:id])
+    @member = Member.find_by_id[:member_id]
   end
 
   private
